@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 
+
 public class Main {
 
     public static void displayDbProperties(Connection con)
@@ -44,5 +45,7 @@ public class Main {
     {
         Connection con = Dbconfig.getMySqlConnection();
         displayDbProperties(con);
+        CSVFileReader file = new CSVFileReader();
+        file.filereader();
     }
 }
