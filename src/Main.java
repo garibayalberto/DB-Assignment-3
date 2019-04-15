@@ -13,7 +13,7 @@ public class Main
 
         Connection con = Dbconfig.getMySqlConnection();
         file.filereader();
+        file.insertQuery();
         db.disconnecting(con);
-
     }
 }
