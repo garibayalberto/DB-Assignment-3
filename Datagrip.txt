@@ -1,1 +1,57 @@
+Create table USWarehouse(
+  WarehouseId integer auto_increment not null,
+  SKU integer not null,
+  PRIMARY KEY (WarehouseId, SKU),
+  Description varchar(25) not null,
+  SellableOnHand integer not null,
+  OpenPOQuantity integer not null,
+  MOQ integer not null,
+  LeadTime integer not null,
+  BackOrders integer not null
+)ENGINE=INNODB;
 
+
+Create table TotalSales(
+  SalesID integer auto_increment not null,
+  PRIMARY KEY (SalesID),
+  WarehouseID integer not null,
+  CONSTRAINT FOREIGN KEY (WarehouseID) REFERENCES USWarehouse(WarehouseId),
+  OneMonthSales integer not null,
+  ThreeMonthSales integer not null,
+  SixMonthSales integer not null
+)ENGINE=INNODB;
+
+
+Create table DimensionTable(
+  DimensionID integer auto_increment not null,
+  PRIMARY KEY (DimensionID),
+  WarehouseID integer not null,
+  CONSTRAINT FOREIGN KEY (WarehouseID) REFERENCES USWarehouse(WarehouseId),
+  Fob_SH float not null,
+  L_cm integer not null,
+  W_cm integer not null,
+  H_cm integer not null,
+  G_W_kg integer not null,
+  N_W_kg integer not null
+)ENGINE=INNODB;
+
+
+Create table PackagingTable(
+  PackagingID integer auto_increment not null,
+  Primary KEY (PackagingID),
+  DimensionID integer not null,
+  CONSTRAINT FOREIGN KEY (DimensionID) REFERENCES DimensionTable(DimensionID),
+  PackagingType varchar(30) not null,
+  PalletDim varchar(30) not null,
+  PalletCtns integer not null,
+  PalletQty integer not null,
+  PalletWeight integer not null,
+  CartonQuantity integer not null
+)ENGINE=INNODB;
+
+
+
+Drop table USWarehouse;
+Drop table TotalSales;
+Drop table DimensionTable;
+Drop table PackagingTable;
