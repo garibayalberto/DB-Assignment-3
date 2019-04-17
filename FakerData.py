@@ -15,7 +15,7 @@ if len(sys.argv) == 3:
 
             writer = csv.DictWriter(file, fieldnames=cols) #writes to file with the column names given
 
-            writer.writeheader() #writes header
+            writer.writeheader() #writes to the header
 
             while numRows > 0: #beginning loop that begins writing fake data
                 writer.writerow({
