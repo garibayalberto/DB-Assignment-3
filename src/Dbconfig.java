@@ -15,8 +15,8 @@ public class Dbconfig
         {
             //returns the Class object associated with the class or interface with the given string
             Class.forName("com.mysql.jdbc.Driver"); //one invocation
-            String connectionUrl = "jdbc:mysql://35.233.130.214:3306/maxxhaul"; //set string near
-            mysqlConnection = DriverManager.getConnection(connectionUrl, "ramir266", "torNado911!");
+            String connectionUrl = "jdbc:mysql://35.233.130.214:3306/maxxhaul? && useSSL=false"; //set string near
+            mysqlConnection = DriverManager.getConnection(connectionUrl, "alfonso", "wood57");
             System.out.println("Connected to Database!");
         }
         catch (Exception ex)
