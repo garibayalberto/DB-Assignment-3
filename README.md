@@ -6,7 +6,8 @@
 
 ## Program Description
 This Assignment is based off the beginning stages of our final project. However, although this project is based off the idea of using fake data using python, this program is able to correctly organize a flat excel sheet into the correct normalized database:
-*  1)
+* Python Faker  
+1)
 *  2)
 *  3)
 *  5)
