@@ -8,9 +8,8 @@
 This Assignment is based off the beginning stages of our final project. However, although this project is based off the idea of using fake data using python, this program is able to correctly organize a flat excel sheet into the correct normalized database:
 * Python Faker  
 *  1) Input the within the command line python FakerData.py [insert name of file] [number of rows] to generate the a csv file with all the columns of our excel sheet. 
-*  
-*  2)
-*  
+*  2) Use that csv file that you were able to create within the this file and use it within the java program, which can be specifically found in the CSVFileReader.java.   
+* Java Scripts 
 *  3)
 *  
 *  4)
