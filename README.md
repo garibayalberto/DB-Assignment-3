@@ -10,8 +10,10 @@ This Assignment is based off the beginning stages of our final project. However,
     1) Input the within the command line python FakerData.py [insert name of file] [number of rows] to generate the a csv file with all the columns of our excel sheet. 
     2) Use that csv file that you were able to create within the this file and use it within the java program, which can be specifically found in the CSVFileReader.java. 
     3) In addition, before you begin the java scripts you must go into data grip when you are able to create the server and create the four different tables of the normalized database, which can be found in the Datagrip.txt. 
-* Java Scripts 
-
+* Java
+    1) After downloading the java files, a pre-made csv file has been provided to test the csv file reader. Or you can provide your own self generated csv file using the python program above. 
+    2) Running Main creates an instance of file csvreader and the database.
+    3) Connects to the database and runs the csv file in the csvFileReader, prints out connecting to database and after it normalizes the database and attributes are added into the appropriate tables. Once done it closes the connection and program ends.
 
 ## Program Overview:
 * CPSC 408 - Assignment 3
