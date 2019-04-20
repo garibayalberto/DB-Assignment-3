@@ -135,9 +135,13 @@ public class CSVFileReader
                 Sales_Amt = Float.parseFloat(record.get(33));
                 insertRecord(con);
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             System.out.println("Error @ readfile level: " + e);
         }
+
+        System.out.println("Inserted Data!");
     }
 
     //Need to edit varchars for approriate date length
@@ -229,12 +233,17 @@ public class CSVFileReader
             PreparedStatement sT = con.prepareStatement(salesTable);
             sT.execute();
 
-        } catch (SQLException e){
+        }
+        catch (SQLException e)
+        {
             System.out.println("Error @ create table level: " + e);
         }
+
+        System.out.println("Created Tables!");
     }
 
-    public static void insertRecord(Connection con){
+    public static void insertRecord(Connection con)
+    {
         String wh = "INSERT INTO USWarehouse(SKU, Description, SellableOnHand, OpenPOQuantity, MOQ, LeadTime, BackOrders) "
                 + "VALUES(?,?,?,?,?,?,?)";
 
@@ -253,7 +262,8 @@ public class CSVFileReader
         String st = "INSERT INTO SalesTable(WarehouseID, Vendor, SalesPONumber, SalesQty, SalesDate, SalesAmt)"
                 + "VALUES(?,?,?,?,?,?)";
 
-        try {
+        try
+        {
             PreparedStatement whInsert = con.prepareStatement(wh,Statement.RETURN_GENERATED_KEYS);
             whInsert.setInt(1, SKU);
             whInsert.setString(2, Description);
@@ -267,7 +277,8 @@ public class CSVFileReader
             ResultSet key_WH = whInsert.getGeneratedKeys();
 
             int key_WH_id = 0;
-            if (key_WH.next()) {
+            if (key_WH.next())
+            {
                 key_WH_id = key_WH.getInt(1);
             }
 
@@ -291,7 +302,8 @@ public class CSVFileReader
             ResultSet key_Dim = dtInsert.getGeneratedKeys();
 
             int key_Dim_id = 0;
-            if (key_Dim.next()) {
+            if (key_Dim.next())
+            {
                 key_Dim_id = key_Dim.getInt(1);
             }
 
@@ -325,7 +337,9 @@ public class CSVFileReader
             stInsert.setFloat(6, Sales_Amt);
             stInsert.executeUpdate();
 
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             System.out.println("Error @ insert data level: " + e);
         }
     }
